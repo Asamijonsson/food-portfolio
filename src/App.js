@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import {initializeApp} from "firebase/app"
-import {getFirestore, collection, getDocs} from "firebase/firestore"
+import {getFirestore} from "firebase/firestore"
 import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Pages/Home";
 import Aboutme from "./Pages/Aboutme";
 import Contact from "./Pages/Contact";
-// import Works from "./Pages/Works";
+import Works from "./Pages/Works";
 // import Party from "./Pages/Party";
 // import Casualdinner from "./Pages/Casualdinner";
 // import Sushi from "./Pages/Sushi";
@@ -32,20 +32,7 @@ function App() {
   // init services
   const db = getFirestore()
 
-  // collection ref
-const colRef = collection (db, "appetizers")
-
-// get collection data
-getDocs(colRef)
-.then((snapshot) =>{let appetizers=[]
-snapshot.docs.forEach((doc)=>{
-  appetizers.push({ ...doc.data(), id:doc.id})
-})
-console.log(appetizers)
-})
-.catch(err =>{
-  console.log(err.message)
-})
+ 
 
 
   // const receipe = [
@@ -116,8 +103,8 @@ console.log(appetizers)
         <Route path="/" element={<Home />} />
         <Route path="aboutme" element={<Aboutme />} />
         <Route path="contact" element={<Contact />} />
-        {/* <Route path="works" element={<Works menu={receipe} />} />
-        <Route path="" element={<Party menu={receipe} />} />
+        <Route path="works" element={<Works menu={db} />} />
+        {/* <Route path="" element={<Party menu={receipe} />} />
         <Route path="" element={<Casualdinner menu={receipe} />} />
         <Route path="" element={<Sushi menu={receipe} />} />
         <Route path="" element={<Ramen menu={receipe} />} /> */}

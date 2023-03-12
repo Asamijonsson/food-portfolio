@@ -1,6 +1,6 @@
 // import { useState } from "react";
-
-
+import { collection, getDocs} from "firebase/firestore"
+import {useEffect, useState} from "react"
 // import PartyList from "./PartyList";
 // import Casualdinner from "./Casualdinner";
 // import Sushi from "./Sushi";
@@ -8,7 +8,7 @@
 // import styles from "./Button.module.css";
 import style from "./categoryList.module.css";
 
-import profile1 from "../image/profile1.png";
+// import profile1 from "../image/profile1.png";
 const CategoryList = ({ menu }) => {
   // const [showParty, setShowParty] = useState(false);
   // const [showCasualDinner, setshowCasualDinner] = useState(false);
@@ -72,15 +72,23 @@ const CategoryList = ({ menu }) => {
   //   document.getElementById("btn4").setAttribute("aria-expanded", n);
   // };
 
+const [appetizers, setAppetizers] =useState([]);
 
+// collection ref
+const colRef = collection (menu, "appetizers")
 
-// // collection ref
-// const colRef = collection (db, "appetizers")
-
-// // get collection data
-// getHeapCodeStatistics(colRef)
-// ,then((snapshot) =>{console.log(snapshot.docs)})
-
+// get collection data
+const fetchPost = async()=>{
+await getDocs(colRef)
+.then((snapshot) =>{
+  let newData=snapshot.docs.map((doc)=>({...doc.data(), id:doc.id}))
+setAppetizers(newData)
+console.log(appetizers[0].name)
+})
+}
+useEffect(()=>{
+  fetchPost();
+},[])
 //   const party = menu
 //     .filter((i) => i.category === "Party")
 //     .map(({ id, category, subcategory }) => ({ id, category, subcategory }));
@@ -108,6 +116,7 @@ const CategoryList = ({ menu }) => {
   
   return (
     <div className={style.background}>
+      <p>{appetizers[0].name[0]}</p>
       {/* <img src={profile1} alt="" />
       <ul className={style.categoryList}>
         <li className={style.categoryList}>
