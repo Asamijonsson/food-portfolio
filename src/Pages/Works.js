@@ -1,10 +1,10 @@
-import CategoryList from "./CategoryList"
+// import CategoryList from "./CategoryList"
 
 const Works =({menu})=>{
   
     return(
         <div>
-       <CategoryList menu={menu}/>
+       {/* <CategoryList menu={menu}/> */}
 
         </div>
     )

@@ -1,104 +1,114 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-import PartyList from "./PartyList";
-import Casualdinner from "./Casualdinner";
-import Sushi from "./Sushi";
-import Ramen from "./Ramen"
-import styles from "./Button.module.css";
+
+// import PartyList from "./PartyList";
+// import Casualdinner from "./Casualdinner";
+// import Sushi from "./Sushi";
+// import Ramen from "./Ramen"
+// import styles from "./Button.module.css";
 import style from "./categoryList.module.css";
 
 import profile1 from "../image/profile1.png";
 const CategoryList = ({ menu }) => {
-  const [showParty, setShowParty] = useState(false);
-  const [showCasualDinner, setshowCasualDinner] = useState(false);
-  const [showSushi, setShowSushi] = useState(false);
-  const [showRamen, setShowRamen] = useState(false);
+  // const [showParty, setShowParty] = useState(false);
+  // const [showCasualDinner, setshowCasualDinner] = useState(false);
+  // const [showSushi, setShowSushi] = useState(false);
+  // const [showRamen, setShowRamen] = useState(false);
  
 
-  const handleShowPartyClick = () => {
-    setShowParty(!showParty);
-  };
+  // const handleShowPartyClick = () => {
+  //   setShowParty(!showParty);
+  // };
 
-  const handleShowCasualClick = () => {
-    setshowCasualDinner(!showCasualDinner);
-  };
+  // const handleShowCasualClick = () => {
+  //   setshowCasualDinner(!showCasualDinner);
+  // };
 
-  const handleShowSushiClick = () => {
-    setShowSushi(!showSushi);
-  };
+  // const handleShowSushiClick = () => {
+  //   setShowSushi(!showSushi);
+  // };
 
-  const handleShowRamenClick = () => {
-    setShowRamen(!showRamen);
-  };
+  // const handleShowRamenClick = () => {
+  //   setShowRamen(!showRamen);
+  // };
 
-  const handlePartyAria = () => {
-    var n = document.getElementById("btn1").getAttribute("aria-expanded");
-    if (n === "true") {
-      n = "false";
-    } else {
-      n = "true";
-    }
-    document.getElementById("btn1").setAttribute("aria-expanded", n);
-  };
+  // const handlePartyAria = () => {
+  //   var n = document.getElementById("btn1").getAttribute("aria-expanded");
+  //   if (n === "true") {
+  //     n = "false";
+  //   } else {
+  //     n = "true";
+  //   }
+  //   document.getElementById("btn1").setAttribute("aria-expanded", n);
+  // };
 
-  const handleCasualDinnerAria = () => {
-    var n = document.getElementById("btn2").getAttribute("aria-expanded");
-    if (n === "true") {
-      n = "false";
-    } else {
-      n = "true";
-    }
-    document.getElementById("btn2").setAttribute("aria-expanded", n);
-  };
+  // const handleCasualDinnerAria = () => {
+  //   var n = document.getElementById("btn2").getAttribute("aria-expanded");
+  //   if (n === "true") {
+  //     n = "false";
+  //   } else {
+  //     n = "true";
+  //   }
+  //   document.getElementById("btn2").setAttribute("aria-expanded", n);
+  // };
 
-  const handleSushiAria = () => {
-    var n = document.getElementById("btn3").getAttribute("aria-expanded");
-    if (n === "true") {
-      n = "false";
-    } else {
-      n = "true";
-    }
-    document.getElementById("btn3").setAttribute("aria-expanded", n);
-  };
+  // const handleSushiAria = () => {
+  //   var n = document.getElementById("btn3").getAttribute("aria-expanded");
+  //   if (n === "true") {
+  //     n = "false";
+  //   } else {
+  //     n = "true";
+  //   }
+  //   document.getElementById("btn3").setAttribute("aria-expanded", n);
+  // };
 
-  const handleRamenAria = () => {
-    var n = document.getElementById("btn4").getAttribute("aria-expanded");
-    if (n === "true") {
-      n = "false";
-    } else {
-      n = "true";
-    }
-    document.getElementById("btn4").setAttribute("aria-expanded", n);
-  };
+  // const handleRamenAria = () => {
+  //   var n = document.getElementById("btn4").getAttribute("aria-expanded");
+  //   if (n === "true") {
+  //     n = "false";
+  //   } else {
+  //     n = "true";
+  //   }
+  //   document.getElementById("btn4").setAttribute("aria-expanded", n);
+  // };
 
-  const party = menu
-    .filter((i) => i.category === "Party")
-    .map(({ id, category, subcategory }) => ({ id, category, subcategory }));
-  const partyMenu = party[0].subcategory.map(({ categoryName, foodName }) => ({
-    categoryName,
-    foodName,
-  }));
 
-  const casualdinner = menu  
-    .filter((i) => i.category === "Casual dinner")
-    .map(({ id, category, foodName }) => ({ id, category, foodName }));
-  const dinnerMenu = casualdinner[0].foodName.map(({ name }) => ({ name }));
 
-  const sushi = menu
-    .filter((i) => i.category === "Sushi")
-    .map(({ id, category, foodName }) => ({ id, category, foodName }));
-  const sushiMenu = sushi[0].foodName.map(({ name }) => ({ name }));
+// // collection ref
+// const colRef = collection (db, "appetizers")
 
-  const ramen = menu
-    .filter((i) => i.category === "Ramen")
-    .map(({ id, category, foodName }) => ({ id, category, foodName }));
-const ramenMenu =ramen[0].foodName.map(({name})=>({name}))
+// // get collection data
+// getHeapCodeStatistics(colRef)
+// ,then((snapshot) =>{console.log(snapshot.docs)})
+
+//   const party = menu
+//     .filter((i) => i.category === "Party")
+//     .map(({ id, category, subcategory }) => ({ id, category, subcategory }));
+//   const partyMenu = party[0].subcategory.map(({ categoryName, foodName }) => ({
+//     categoryName,
+//     foodName,
+//   }));
+
+//   const casualdinner = menu  
+//     .filter((i) => i.category === "Casual dinner")
+//     .map(({ id, category, foodName }) => ({ id, category, foodName }));
+//   const dinnerMenu = casualdinner[0].foodName.map(({ name }) => ({ name }));
+
+//   const sushi = menu
+//     .filter((i) => i.category === "Sushi")
+//     .map(({ id, category, foodName }) => ({ id, category, foodName }));
+//   const sushiMenu = sushi[0].foodName.map(({ name }) => ({ name }));
+
+//   const ramen = menu
+//     .filter((i) => i.category === "Ramen")
+//     .map(({ id, category, foodName }) => ({ id, category, foodName }));
+// const ramenMenu =ramen[0].foodName.map(({name})=>({name}))
 
 
   
   return (
     <div className={style.background}>
-      <img src={profile1} alt="" />
+      {/* <img src={profile1} alt="" />
       <ul className={style.categoryList}>
         <li className={style.categoryList}>
           <button
@@ -167,7 +177,7 @@ const ramenMenu =ramen[0].foodName.map(({name})=>({name}))
         {showRamen ? <Ramen ramenMenu={ramenMenu} /> : null}
       </ul>
 
-     
+      */}
     </div>
   );
 };
