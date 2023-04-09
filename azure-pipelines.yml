@@ -1,5 +1,5 @@
 # Node.js with React
- task: PublishBuildArtifacts@1
+ - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
@@ -15,12 +15,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
- task: NodeTool@0
+ - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
- script: |
+ - script: |
     npm install
-    npm run build
+    npm start
   displayName: 'npm install and build'
