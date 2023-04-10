@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import  style from "./App.module.css";
+
+
+import style from "./App.module.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Pages/Home";
@@ -11,7 +13,9 @@ import Casualdinner from "./Pages/Casualdinner";
 import Sushi from "./Pages/Sushi";
 import Ramen from "./Pages/Ramen";
 
+
 function App() {
+
   const receipe = [
     {
       id: 0,
@@ -76,6 +80,7 @@ function App() {
  
   return (
     <div className={style.App}>
+
    <a href="#main-content" className="skip-link" >Skip to main content</a>
       <Header />
       <Routes>
